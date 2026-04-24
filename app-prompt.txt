@@ -1,0 +1,128 @@
+Build me a complete Expo React Native TypeScript fitness transformation app that runs in Expo Go.
+
+App name: FitBody90
+
+User profile:
+- Age: 37
+- Height: 5'8" / 173 cm
+- Weight: 82 kg
+- Goal weight: 72–74 kg
+- Gym access: yes
+- Diet: non-veg
+- Main goal: lose belly fat, build muscle, get athletic body in 90 days
+
+Requirements:
+1. Use Expo + React Native + TypeScript.
+2. Must run in Expo Go.
+3. Use clean modern mobile UI.
+4. No backend. Store data locally using AsyncStorage.
+5. Use React Navigation bottom tabs.
+6. Create these screens:
+   - Dashboard
+   - Workout
+   - Nutrition
+   - Progress
+   - Plan
+
+Dashboard:
+- Show current weight, goal weight, day number out of 90
+- Show daily checklist:
+  - Workout done
+  - 8,000 steps
+  - 150g protein
+  - 3L water
+  - Sleep 7 hours
+- Add motivational text based on progress.
+
+Workout screen:
+Create a 4-day weekly gym split:
+Day 1 Push:
+- Bench Press 4x8
+- Incline Dumbbell Press 3x10
+- Shoulder Press 3x10
+- Tricep Pushdown 3x12
+- Pushups 3 sets
+
+Day 2 Pull:
+- Lat Pulldown 4x10
+- Seated Row 3x10
+- Dumbbell Row 3x10
+- Face Pull 3x15
+- Biceps Curl 3x12
+
+Day 3 Legs + Core:
+- Leg Press or Squat 4x10
+- Romanian Deadlift 3x10
+- Walking Lunges 3x12
+- Plank 3x45 sec
+- Leg Raises 3x12
+
+Day 4 Full Body:
+- Deadlift moderate 3x5
+- Dumbbell Press 3x10
+- Cable Row 3x10
+- Farmer Carry 3 rounds
+- Incline Treadmill 20 min
+
+Each exercise should have checkbox completion.
+
+Nutrition screen:
+- Calories target: 1900–2100 kcal
+- Protein target: 150g
+- Water target: 3L
+- Show meal suggestions:
+  Breakfast: 4 eggs + toast + fruit OR Greek yogurt + oats + whey
+  Lunch: 150–200g chicken/fish + rice or roti + vegetables + salad
+  Snack: whey shake OR boiled eggs OR fruit
+  Dinner: chicken/fish/paneer + vegetables + light carbs
+- Add daily input fields for calories, protein, water.
+
+Progress screen:
+- Weekly weigh-in input
+- Waist measurement input
+- Progress notes input
+- Show target weight table:
+  Start: 82 kg
+  Month 1: 79.5 kg
+  Month 2: 77.5 kg
+  Month 3: 75.5 kg
+  Month 4: 74 kg
+  Month 5: 73 kg
+  Month 6: 72–74 kg
+- Store progress history locally.
+
+Plan screen:
+Show 90-day roadmap:
+Weeks 1–4:
+- Build gym habit
+- Walk 8k steps daily
+- Reduce sugar/fried food
+- Learn tracking
+
+Weeks 5–8:
+- Increase weights gradually
+- Add 2–3 cardio sessions
+- Keep protein high
+- Tighten weekend diet
+
+Weeks 9–12:
+- Push intensity
+- Improve sleep
+- Take progress photos
+- Review weight and waist
+
+Design:
+- Dark theme
+- Strong fitness look
+- Cards with rounded corners
+- Big progress numbers
+- Friendly motivational copy
+- Use reusable components where possible
+
+Technical:
+- Install needed dependencies.
+- Create clear folder structure.
+- Add comments where helpful.
+- Make sure npm start / npx expo start works.
+- Fix TypeScript errors.
+- At the end, tell me exactly how to run it in Expo Go.
