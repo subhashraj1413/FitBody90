@@ -51,11 +51,11 @@ Your complete fitness transformation app is ready to use in Expo Go!
   - Secondary: Teal (#4ECDC4)
   - Success: Green (#5FD668)
 
-- **Storage Utilities** (`utils/storage.ts`)
-  - AsyncStorage wrapper
-  - Type-safe data persistence
-  - User profile management
-  - History tracking
+- **SQLite Layer** (`src/db/`)
+  - Expo SQLite migrations
+  - Type-safe query helpers
+  - Default profile and streak seed
+  - Checklist, workout, nutrition, and progress persistence
 
 - **Calculation Utilities** (`utils/calculations.ts`)
   - Date utilities
@@ -65,7 +65,7 @@ Your complete fitness transformation app is ready to use in Expo Go!
 
 ### 🔧 Configuration
 - **Navigation** - Bottom tab navigation with 5 tabs
-- **Storage** - Local AsyncStorage (no backend)
+- **Storage** - Local Expo SQLite (no backend)
 - **Dark Theme** - Entire app in dark mode
 - **TypeScript** - Fully typed codebase
 
@@ -73,7 +73,7 @@ Your complete fitness transformation app is ready to use in Expo Go!
 
 ## 📊 Data Structure
 
-All data is stored locally using AsyncStorage:
+All app data is stored locally using Expo SQLite in `fitbody90.db`:
 
 ```
 User Profile:
@@ -127,7 +127,7 @@ The app will load and show the Dashboard screen!
 
 ✅ Bottom tab navigation (5 tabs)  
 ✅ Dark theme throughout  
-✅ AsyncStorage persistence  
+✅ SQLite persistence  
 ✅ Automatic day counter (1-90)  
 ✅ 4-day workout split  
 ✅ Exercise tracking  
@@ -160,11 +160,11 @@ The app will load and show the Dashboard screen!
 | File | Purpose |
 |------|---------|
 | `app/(tabs)/_layout.tsx` | Tab navigation setup |
-| `app/screens/*.tsx` | Screen components |
-| `constants/colors.ts` | Dark theme colors |
-| `utils/storage.ts` | Data persistence |
-| `utils/calculations.ts` | Fitness logic |
-| `components/UI.tsx` | Reusable components |
+| `app/(tabs)/*.tsx` | Expo Router tab screens |
+| `src/theme/colors.ts` | Dark red/black theme colors |
+| `src/db/*.ts` | SQLite migrations, seed, queries |
+| `src/hooks/*.ts` | Screen data hooks |
+| `src/components/` | Reusable components |
 | `app.json` | Expo configuration |
 | `package.json` | Dependencies |
 
@@ -211,7 +211,7 @@ The app will load and show the Dashboard screen!
 - [x] Dark theme applied
 - [x] TypeScript typed
 - [x] No build errors
-- [x] AsyncStorage configured
+- [x] SQLite configured
 - [x] README documentation ready
 - [x] Dependencies installed
 - [x] Expo server running

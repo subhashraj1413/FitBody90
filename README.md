@@ -64,10 +64,10 @@ A complete Expo React Native TypeScript fitness transformation app designed to h
 
 - **Framework**: Expo with React Native
 - **Language**: TypeScript
-- **Navigation**: React Navigation (Bottom Tabs)
-- **Storage**: AsyncStorage (local data persistence)
-- **Styling**: React Native StyleSheet with custom dark theme
-- **UI Components**: Custom-built components for cards, checkboxes, progress bars
+- **Navigation**: Expo Router tabs
+- **Storage**: Expo SQLite (`fitbody90.db`)
+- **Styling**: NativeWind with a premium red/black theme
+- **UI Components**: Modular cards, toggles, metric tiles, rings, and charts
 
 ## Project Structure
 
@@ -76,26 +76,20 @@ FitBody90/
 ├── app/
 │   ├── (tabs)/                 # Bottom tab navigation
 │   │   ├── _layout.tsx        # Tab navigator configuration
-│   │   ├── dashboard.tsx      # Dashboard tab screen
+│   │   ├── index.tsx          # Dashboard tab screen
 │   │   ├── workout.tsx        # Workout tab screen
 │   │   ├── nutrition.tsx      # Nutrition tab screen
 │   │   ├── progress.tsx       # Progress tab screen
 │   │   └── plan.tsx           # Plan tab screen
-│   ├── screens/               # Screen components
-│   │   ├── Dashboard.tsx
-│   │   ├── Workout.tsx
-│   │   ├── Nutrition.tsx
-│   │   ├── Progress.tsx
-│   │   └── Plan.tsx
 │   ├── _layout.tsx            # Root layout
-│   └── modal.tsx              # Modal screen
-├── components/
-│   └── UI.tsx                 # Reusable UI components
-├── constants/
-│   └── colors.ts              # Theme colors and gradients
-├── utils/
-│   ├── storage.ts             # AsyncStorage utilities
-│   └── calculations.ts        # Fitness calculations
+│   └── +not-found.tsx
+├── src/
+│   ├── components/            # Reusable UI/domain components
+│   ├── data/                  # Workout, meal, roadmap, quotes
+│   ├── db/                    # SQLite migrations, seed, queries
+│   ├── hooks/                 # Screen data hooks
+│   ├── theme/                 # Theme constants
+│   └── types/                 # Shared TypeScript types
 ├── package.json
 ├── tsconfig.json
 └── app.json
@@ -163,12 +157,13 @@ npm start
 
 ### Dark Theme
 - Custom dark color palette optimized for fitness tracking
-- Primary accent color: Coral Red (#FF6B6B)
-- Secondary accent: Teal (#4ECDC4)
+- Primary accent color: Crimson Red (#E10600)
+- Secondary accent: Bright Red (#FF2A2A)
 - Better for evening workouts and tracking
 
 ### Local Data Persistence
-- All data saved locally using AsyncStorage
+- All app data saved locally using Expo SQLite
+- Database file: `fitbody90.db`
 - No backend required
 - Works offline
 - Data persists between app sessions
@@ -211,10 +206,10 @@ Edit these in the respective screen component files.
 ### App won't load
 1. Make sure you're on the same WiFi network as your computer
 2. Try clearing Metro cache: Press `shift+c` in the terminal
-3. Kill the server and restart: `npm start`
+3. Kill the server and restart: `yarn start`
 
 ### Data not persisting
-1. Check that AsyncStorage is properly initialized
+1. Check the SQLite migrations in `src/db/migrations.ts`
 2. Clear app cache: Quit Expo Go and reopen
 3. Check browser console for errors
 

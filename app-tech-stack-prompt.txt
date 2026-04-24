@@ -1,0 +1,454 @@
+Build/refactor my Expo React Native TypeScript fitness app into a premium red + black fitness transformation app.
+
+App name: FitBody90
+
+User profile:
+- Age: 37
+- Height: 173 cm / 5'8"
+- Start weight: 82 kg
+- Goal weight: 72–74 kg
+- Gym access: yes
+- Diet: non-veg
+- Main goal: lose belly fat, build muscle, get athletic body in 90 days
+
+Tech Stack:
+- Expo
+- React Native
+- TypeScript
+- Expo Router
+- NativeWind
+- Yarn only
+- SQLite using expo-sqlite
+- Must run in Expo Go
+- No backend
+
+IMPORTANT:
+- Use Expo Router default app/ folder routing.
+- Use NativeWind className styling everywhere possible.
+- Use SQLite instead of AsyncStorage.
+- Keep app modular, clean, scalable, and TypeScript-safe.
+- Fix all TypeScript errors.
+
+Install dependencies with Yarn:
+
+yarn add expo-router
+yarn add nativewind
+yarn add expo-sqlite
+yarn add react-native-reanimated
+yarn add react-native-safe-area-context
+yarn add react-native-screens
+yarn add expo-linear-gradient
+yarn add expo-haptics
+yarn add lucide-react-native
+yarn add react-native-svg
+yarn add react-native-chart-kit
+yarn add -D tailwindcss
+
+Set package.json:
+"main": "expo-router/entry"
+
+Configure NativeWind:
+1. Create/update tailwind.config.js
+2. Add content paths:
+   "./app/**/*.{js,jsx,ts,tsx}",
+   "./src/**/*.{js,jsx,ts,tsx}",
+   "./App.{js,jsx,ts,tsx}"
+
+3. Add theme colors:
+   black: "#0A0A0A"
+   carbon: "#121212"
+   card: "#181818"
+   red: "#E10600"
+   redBright: "#FF2A2A"
+   whiteSoft: "#F5F5F5"
+   grayText: "#9A9A9A"
+   success: "#22C55E"
+
+4. Configure babel.config.js:
+   - nativewind/babel
+   - expo-router/babel if needed
+   - react-native-reanimated/plugin must be last
+
+Use this folder structure:
+
+app/
+  _layout.tsx
+  +not-found.tsx
+
+  (tabs)/
+    _layout.tsx
+    index.tsx
+    workout.tsx
+    nutrition.tsx
+    progress.tsx
+    plan.tsx
+
+src/
+  components/
+    ui/
+      AppButton.tsx
+      AppCard.tsx
+      ProgressRing.tsx
+      MetricTile.tsx
+      SectionHeader.tsx
+      ProgressBar.tsx
+      ToggleCheck.tsx
+      Badge.tsx
+      ChartCard.tsx
+
+    workout/
+      WorkoutCard.tsx
+      ExerciseRow.tsx
+
+    nutrition/
+      MealCard.tsx
+      MacroCard.tsx
+
+    progress/
+      ProgressLogCard.tsx
+
+  data/
+    workoutPlan.ts
+    mealPlan.ts
+    roadmap.ts
+    quotes.ts
+
+  db/
+    index.ts
+    migrations.ts
+    queries.ts
+    seed.ts
+
+  hooks/
+    useDashboard.ts
+    useChecklist.ts
+    useProgress.ts
+    useNutrition.ts
+    useWorkout.ts
+    useStreak.ts
+
+  theme/
+    colors.ts
+    spacing.ts
+    typography.ts
+    shadows.ts
+
+  types/
+    index.ts
+
+Root files:
+babel.config.js
+tailwind.config.js
+metro.config.js
+global.css
+nativewind-env.d.ts
+
+Theme Direction:
+Make the app look like a high-end luxury performance fitness app.
+
+Style inspiration:
+- Ferrari meets Nike Training Club
+- Premium gym brand
+- Sharp, bold, elite, masculine
+- Clean UI
+- Smooth interactions
+- Big progress numbers
+
+Primary colors:
+- Deep Black: #0A0A0A
+- Carbon Black: #121212
+- Card Black: #181818
+- Crimson Red: #E10600
+- Bright Red Accent: #FF2A2A
+- Soft White: #F5F5F5
+- Gray Text: #9A9A9A
+- Success Green: #22C55E
+
+Global UI:
+1. Dark mode only
+2. Black/red gradients
+3. Rounded cards with 18px radius
+4. Red glow on important buttons
+5. Bold headings
+6. Clean readable text
+7. Strong CTA buttons
+8. Minimal clutter
+9. Smooth transitions
+10. Consistent spacing
+
+Navigation:
+Use Expo Router Tabs in app/(tabs)/_layout.tsx.
+
+Tabs:
+- Premium floating tab bar
+- Black background
+- Red active icon/text
+- Gray inactive icons/text
+- Rounded corners
+- Subtle shadow/glow
+
+Routes:
+- Dashboard: app/(tabs)/index.tsx
+- Workout: app/(tabs)/workout.tsx
+- Nutrition: app/(tabs)/nutrition.tsx
+- Progress: app/(tabs)/progress.tsx
+- Plan: app/(tabs)/plan.tsx
+
+Database:
+Use expo-sqlite.
+
+Database file:
+fitbody90.db
+
+Create these tables:
+
+1. user_profile
+- id INTEGER PRIMARY KEY
+- age INTEGER
+- height_cm INTEGER
+- start_weight REAL
+- goal_weight REAL
+- created_at TEXT
+
+2. daily_checklist
+- id INTEGER PRIMARY KEY
+- date TEXT UNIQUE
+- workout_done INTEGER
+- steps_done INTEGER
+- protein_done INTEGER
+- water_done INTEGER
+- sleep_done INTEGER
+
+3. progress_logs
+- id INTEGER PRIMARY KEY
+- date TEXT
+- weight REAL
+- waist REAL
+- notes TEXT
+
+4. nutrition_logs
+- id INTEGER PRIMARY KEY
+- date TEXT
+- calories INTEGER
+- protein INTEGER
+- water REAL
+
+5. workouts_completed
+- id INTEGER PRIMARY KEY
+- date TEXT
+- workout_day TEXT
+- exercise_name TEXT
+- completed INTEGER
+
+6. streaks
+- id INTEGER PRIMARY KEY
+- current_streak INTEGER
+- best_streak INTEGER
+- updated_at TEXT
+
+On first launch:
+- Run migrations automatically
+- Seed default profile:
+  Age: 37
+  Height: 173
+  Start Weight: 82
+  Goal Weight: 73
+- Seed default streak row if missing
+
+SQLite requirements:
+- Use transactions
+- Create reusable query helpers
+- Use TypeScript types
+- Handle errors gracefully
+- Replace/remove any AsyncStorage usage
+
+Screens:
+
+1. Dashboard
+- Hero gradient card
+- Current Weight: latest SQLite weight or 82 kg
+- Goal Weight: 72–74 kg
+- Day X / 90
+- Circular red progress ring
+- Daily checklist:
+  Workout done
+  8,000 steps
+  150g protein
+  3L water
+  Sleep 7 hours
+- Streak counter
+- Quote of the day
+- Today’s Mission card
+- Badges:
+  Beast Mode
+  7 Day Streak
+  Protein King
+
+2. Workout
+Create 4-day weekly gym split.
+
+Day 1 Push:
+- Bench Press 4x8
+- Incline Dumbbell Press 3x10
+- Shoulder Press 3x10
+- Tricep Pushdown 3x12
+- Pushups 3 sets
+
+Day 2 Pull:
+- Lat Pulldown 4x10
+- Seated Row 3x10
+- Dumbbell Row 3x10
+- Face Pull 3x15
+- Biceps Curl 3x12
+
+Day 3 Legs + Core:
+- Leg Press or Squat 4x10
+- Romanian Deadlift 3x10
+- Walking Lunges 3x12
+- Plank 3x45 sec
+- Leg Raises 3x12
+
+Day 4 Full Body:
+- Deadlift moderate 3x5
+- Dumbbell Press 3x10
+- Cable Row 3x10
+- Farmer Carry 3 rounds
+- Incline Treadmill 20 min
+
+Workout UI:
+- Weekly split selector pills
+- Exercise cards
+- Animated red checkbox/toggle
+- Completed exercises fade slightly
+- Save exercise completion to SQLite
+
+3. Nutrition
+Targets:
+- Calories: 1900–2100 kcal
+- Protein: 150g
+- Water: 3L
+
+UI:
+- Macro cards
+- Red progress bars
+- Dark modern input fields
+- Meal suggestion cards
+
+Meal suggestions:
+Breakfast:
+- 4 eggs + toast + fruit
+- OR Greek yogurt + oats + whey
+
+Lunch:
+- 150–200g chicken/fish
+- Rice or roti
+- Vegetables
+- Salad
+
+Snack:
+- Whey shake
+- OR boiled eggs
+- OR fruit
+
+Dinner:
+- Chicken/fish/paneer
+- Vegetables
+- Light carbs
+
+Save calories/protein/water logs to SQLite.
+
+4. Progress
+- Weekly weigh-in input
+- Waist measurement input
+- Notes input
+- Save progress logs to SQLite
+- Show progress history
+- Weight chart
+- Waist chart
+- Progress stats tiles
+- Before/after photo placeholders
+
+Target table:
+Start: 82 kg
+Month 1: 79.5 kg
+Month 2: 77.5 kg
+Month 3: 75.5 kg
+Month 4: 74 kg
+Month 5: 73 kg
+Month 6: 72–74 kg
+
+5. Plan
+Show 90-day roadmap timeline.
+
+Weeks 1–4:
+- Build gym habit
+- Walk 8k steps daily
+- Reduce sugar/fried food
+- Learn tracking
+
+Weeks 5–8:
+- Increase weights gradually
+- Add 2–3 cardio sessions
+- Keep protein high
+- Tighten weekend diet
+
+Weeks 9–12:
+- Push intensity
+- Improve sleep
+- Take progress photos
+- Review weight and waist
+
+Plan UI:
+- Modern step cards
+- Red milestone indicators
+- Premium roadmap timeline
+
+Components:
+Create reusable components:
+- AppButton
+- AppCard
+- ProgressRing
+- MetricTile
+- SectionHeader
+- ProgressBar
+- ToggleCheck
+- Badge
+- ChartCard
+- WorkoutCard
+- ExerciseRow
+- MealCard
+- MacroCard
+- ProgressLogCard
+
+Animations:
+Use react-native-reanimated or React Native Animated API:
+- Fade in cards
+- Button scale on press
+- Smooth checkbox transitions
+- Progress ring animation
+- Subtle tab animation
+
+Haptics:
+Use expo-haptics for:
+- Checkbox toggle
+- Save buttons
+- Workout completed
+
+Code Quality:
+- Keep files small
+- Avoid huge screens
+- Use reusable hooks
+- Use theme constants
+- Use TypeScript types
+- Make sure Expo Go compatibility remains
+- Ensure TypeScript passes
+- Ensure app runs without errors
+
+At the end, explain:
+1. Exact Yarn install commands used
+2. How SQLite initializes
+3. How to run with:
+   yarn start
+
+4. For physical device connection issues, also mention:
+   npx expo start --tunnel
