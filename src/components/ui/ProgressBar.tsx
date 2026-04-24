@@ -17,8 +17,11 @@ export function ProgressBar({ value, label, caption }: ProgressBarProps) {
           {caption ? <Text className="text-xs text-grayText">{caption}</Text> : null}
         </View>
       )}
-      <View className="h-2.5 overflow-hidden rounded-full bg-[#2B2B2B]">
-        <View className="h-full rounded-full bg-redBright" style={{ width }} />
+      <View className="h-1.5 overflow-hidden rounded-full bg-white/[0.07]">
+        <View
+          className="h-full rounded-full bg-red"
+          style={{ width, shadowColor: '#E10600', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.7, shadowRadius: 4 }}
+        />
       </View>
     </View>
   );

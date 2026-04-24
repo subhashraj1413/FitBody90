@@ -11,8 +11,13 @@ type ExerciseRowProps = {
 
 export function ExerciseRow({ exercise, checked, onToggle }: ExerciseRowProps) {
   return (
-    <View className={checked ? 'opacity-55' : 'opacity-100'}>
-      <ToggleCheck label={exercise.name} caption={`${exercise.sets} - ${exercise.note}`} checked={checked} onPress={onToggle} />
+    <View style={{ opacity: checked ? 0.5 : 1 }}>
+      <ToggleCheck
+        label={exercise.name}
+        caption={`${exercise.sets}  ·  ${exercise.note}`}
+        checked={checked}
+        onPress={onToggle}
+      />
     </View>
   );
 }

@@ -53,7 +53,6 @@ export function useWorkout() {
     setSelectedIndex,
     completed,
     completedCount,
-    completion: completedCount / workout.exercises.length,
     toggleExercise,
   };
 }

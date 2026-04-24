@@ -9,12 +9,15 @@ type MetricTileProps = {
 
 export function MetricTile({ label, value, icon }: MetricTileProps) {
   return (
-    <View className="min-h-[92px] flex-1 justify-between rounded-[18px] border border-[#2A2A2A] bg-card p-3">
+    <View
+      className="min-h-[96px] flex-1 justify-between rounded-[20px] border border-white/[0.06] bg-card p-4"
+      style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.35, shadowRadius: 10, elevation: 5 }}
+    >
       <View className="flex-row items-center justify-between">
-        <Text className="text-xs uppercase text-grayText">{label}</Text>
+        <Text className="text-[10px] font-bold uppercase tracking-widest text-grayText">{label}</Text>
         {icon}
       </View>
-      <Text className="text-2xl font-black text-whiteSoft">{value}</Text>
+      <Text className="text-[22px] font-black tracking-tight text-whiteSoft">{value}</Text>
     </View>
   );
 }

@@ -1,0 +1,150 @@
+Redesign the entire app UI to look like a 2026 premium modern mobile app used by top fitness brands.
+
+STYLE GOAL:
+Create an ultra-clean, luxurious, high-performance experience with world-class UI polish.
+
+Design inspiration:
+- Apple Fitness+
+- Nike Training Club
+- WHOOP
+- Ferrari dashboard aesthetics
+- Modern fintech app quality
+- Premium iOS / Android flagship app
+
+VISUAL DIRECTION:
+- Dark mode first
+- Glassmorphism + soft depth
+- Rich black surfaces
+- Bold red accent system
+- Smooth gradients
+- Spacious layouts
+- Sharp typography
+- Elegant micro-interactions
+- Premium motion
+
+COLOR SYSTEM:
+Primary Background: #0A0A0A
+Secondary Background: #121212
+Card Surface: #181818
+Primary Accent Red: #E10600
+Bright Accent Red: #FF2A2A
+Text Primary: #F5F5F5
+Text Secondary: #9A9A9A
+Success: #22C55E
+Border: rgba(255,255,255,0.06)
+
+GLOBAL UI RULES:
+1. Every screen must feel premium and expensive.
+2. Use generous padding and breathing room.
+3. Cards must have rounded-xl / rounded-2xl corners.
+4. Buttons must feel tactile and modern.
+5. Avoid clutter completely.
+6. Use subtle shadows and glow.
+7. Use layered depth.
+8. Use beautiful spacing rhythm.
+9. Prioritize readability.
+10. Make everything feel smooth.
+
+TYPOGRAPHY:
+- Hero Numbers: extra bold, oversized
+- Headings: bold, sharp, modern
+- Labels: medium weight
+- Caption text: muted and minimal
+- Strong hierarchy
+
+COMPONENT STYLING:
+
+Buttons:
+- Rounded full
+- Red gradient primary buttons
+- Black secondary ghost buttons
+- Scale animation on press
+- Glow when active
+
+Cards:
+- Elevated surfaces
+- Rounded 20px+
+- Subtle border
+- Slight inner glow
+- Smooth shadows
+
+Inputs:
+- Dark premium fields
+- Clean placeholder text
+- Focus border red
+- Spacious height
+
+Navigation:
+- Floating bottom tab bar
+- Blur/glass effect
+- Rounded corners
+- Red active icon/text
+- Gray inactive state
+- Premium spacing
+
+ANIMATIONS:
+Use Reanimated if possible.
+
+Need:
+- Fade in on screen load
+- Slide up cards
+- Button press scale
+- Progress ring animation
+- Tab transition polish
+- Toggle spring animation
+- Skeleton loading shimmer
+
+DASHBOARD EXPERIENCE:
+- Hero progress card
+- Circular progress ring
+- Weight + goal stats
+- Daily streak flame badge
+- Quote of the day
+- Today mission section
+- Animated completion checklist
+
+WORKOUT EXPERIENCE:
+- Strong exercise cards
+- Red active states
+- Completion animation
+- Sets/reps easy to scan
+- Premium progress tracker
+
+NUTRITION EXPERIENCE:
+- Macro donut/progress bars
+- Meal cards with elegant layout
+- Inputs feel world-class
+
+PROGRESS EXPERIENCE:
+- Beautiful charts
+- Weekly milestones
+- Transformation timeline
+- Achievement badges
+
+PLAN EXPERIENCE:
+- Cinematic roadmap timeline
+- Milestone cards
+- Motivational progress journey
+
+MICRO DETAILS:
+- Haptic feedback on actions
+- Loading states polished
+- Empty states beautifully designed
+- Success states satisfying
+- Smooth gestures
+
+RESPONSIVE:
+- Must look elite on both iPhone and Android
+- Respect safe areas
+- Smooth scrolling
+- No cramped layouts
+
+CODE QUALITY:
+- Reusable design system
+- Theme tokens
+- Clean component structure
+- Maintainable styling
+- NativeWind className preferred
+
+FINAL RESULT:
+When someone opens the app, it should feel like a $10M startup fitness product.
